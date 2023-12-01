@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flight_booking/AppRouter.dart';
 import 'package:flight_booking/bussinessLogic/cubit/book_trip_cubit.dart';
 import 'package:flight_booking/constatnts/Strings.dart';
 import 'package:flight_booking/constatnts/mylocal.dart';
@@ -34,9 +32,9 @@ class BookFlightScreen extends StatelessWidget {
             children: [
               Center(
                 child: DottedBorder(
-                  dashPattern: [6, 3], // Adjust the dash pattern as needed
+                  dashPattern: [6, 3], 
                   borderType: BorderType.RRect,
-                  radius: Radius.circular(20.0), // Adjust the radius as needed
+                  radius: Radius.circular(20.0), 
                   strokeWidth: 2.0,
                   color: Color.fromARGB(255, 8, 41, 226),
                   child: Container(
@@ -218,7 +216,7 @@ class formFlightState extends State<formFlight> {
                   ),
                 ),
               ),
-              SizedBox(width: 10), // Adjust the spacing between TextFormFields
+              SizedBox(width: 10),
               Expanded(
                 child: SizedBox(
                   height: 50,
@@ -305,7 +303,7 @@ class formFlightState extends State<formFlight> {
                 child: SizedBox(
                     height: 70,
                     child: Container(
-                      width: 150, // Set a fixed width for consistency
+                      width: 150,
                       child: DropdownButtonFormField<int>(
                         value: selectedNumber1,
                         onChanged: (int? newValue) {
@@ -332,7 +330,7 @@ class formFlightState extends State<formFlight> {
                 child: SizedBox(
                     height: 70,
                     child: Container(
-                      width: 150, // Set a fixed width for consistency
+                      width: 150,
                       child: DropdownButtonFormField<int>(
                         value: selectedNumber2,
                         onChanged: (int? newValue) {
@@ -412,7 +410,7 @@ class formFlightState extends State<formFlight> {
             ),
             onPressed: () {
               final flightData = FlightData(
-                // Populate with the relevant data from your form
+              
 
                 departure: startdateinput.text,
                 from: from.text,
@@ -422,7 +420,6 @@ class formFlightState extends State<formFlight> {
                 flightClass: selectedClass,
               );
 
-              // Access the FlightCubit using BlocProvider
               BlocProvider.of<BookTripCubit>(context)
                   .postFlightData(flightData);
               Fluttertoast.showToast(

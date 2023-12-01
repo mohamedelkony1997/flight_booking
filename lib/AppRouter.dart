@@ -26,7 +26,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (BuildContext context) => _flightCubit,
-            child: BookFlightScreen(), // Replace with your actual screen
+            child: BookFlightScreen(), 
           ),
         );
       case Flights:
@@ -42,7 +42,7 @@ class AppRouter {
             ),
           ),
         );
-      // Add more cases for other routes if needed
+    
       default:
         return null;
     }

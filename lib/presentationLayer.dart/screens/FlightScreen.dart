@@ -64,7 +64,9 @@ class FlightsScreen extends StatelessWidget {
                         ImageIcon(AssetImage("assets/images/filter.png")),
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 1.51,
                       child: ListView.builder(
@@ -166,7 +168,6 @@ class FlightsScreen extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-                                          // Add other flight information as needed
                                         ],
                                       ),
                                     ),
@@ -192,7 +193,80 @@ class FlightsScreen extends StatelessWidget {
                                             Colors.transparent),
                                       ),
                                       onPressed: () {
-                                        // Your button action
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Text(
+                                                "Promo Code Applied".tr,
+                                                style: TextStyle(
+                                                  color: Color.fromARGB(
+                                                      255, 8, 34, 177),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22,
+                                                ),
+                                              ),
+                                              content: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "You have a 10% discount on the price!"
+                                                        .tr,
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 100, 101, 102),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 15,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 10),
+                                                  Text(
+                                                    "Original Price:".tr +
+                                                        " ${flight.price}\$",
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 12, 12, 12),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 20,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    "Discounted Price: ".tr +
+                                                        "${calculateDiscountedPrice(flight.price)}\$",
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 12, 12, 12),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 20,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Text(
+                                                    "OK".tr,
+                                                    style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 12, 12, 12),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 25,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
                                       },
                                       child: Padding(
                                         padding: const EdgeInsets.only(
@@ -229,6 +303,13 @@ class FlightsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  double calculateDiscountedPrice(String originalPrice) {
+    double val = double.parse(originalPrice);
+    double discountPercentage = 0.10;
+    double discountAmount = val * discountPercentage;
+    return val - discountAmount;
   }
 }
 
@@ -302,8 +383,10 @@ class RoundedAppBar extends StatelessWidget {
                   },
                   icon: Icon(Icons.language, color: Colors.white),
                   underline: SizedBox(),
-                dropdownColor: Colors.white,
-                  style: TextStyle(color:Color.fromARGB(255, 8, 41, 226),),
+                  dropdownColor: Colors.white,
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 8, 41, 226),
+                  ),
                 ),
               ),
             ],

@@ -1,4 +1,4 @@
-// model.dart
+
 class FlightData {
 
   final String departure;

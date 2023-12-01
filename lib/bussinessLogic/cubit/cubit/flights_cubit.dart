@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flight_booking/bussinessLogic/cubit/cubit/flights_state.dart';
 import 'package:flight_booking/data/Repositery/FlightRepositery.dart';
 
-import 'package:flight_booking/data/models/Flight.dart';
-import 'package:meta/meta.dart';
+
 
 class FlightCubit extends Cubit<FlightState> {
   final FlightRepository _flightRepository = FlightRepository();

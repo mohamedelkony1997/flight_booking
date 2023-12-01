@@ -21,11 +21,16 @@ class MyLocal implements Translations {
           "To": "إلى",
           "From": " من",
           "in": "فى",
-           "hr":"ساعه",
-           "stop":"وقوف",
-           "BookFlight":"حجز الرحله",
-            "Search Results": "نتائج البحث",
-            "Best Values Offers to Asia":"أفضل العروض القيمة لآسيا"
+          "hr": "ساعه",
+          "stop": "وقوف",
+          "BookFlight": "حجز الرحله",
+          "Search Results": "نتائج البحث",
+          "Best Values Offers to Asia": "أفضل العروض القيمة لآسيا",
+          "OK": "حسنا ",
+          "Discounted Price: ": "السعر المخفض: ",
+          "Original Price:": "السعر الأصلي:",
+          "You have a 10% discount on the price!": "لديك خصم 10% على السعر!",
+          "Promo Code Applied": "تم تطبيق الرمز الترويجي",
         },
         'en': {
           "Book your Flight": "Book your Flight",
@@ -43,14 +48,18 @@ class MyLocal implements Translations {
           'Please enter departure': 'Please enter departure',
           "To": "To",
           "From": "From",
-           "in": "in",
-           "hr":"hr",
-           "stop":"stop",
-           "BookFlight":"BookFlight",
-            "Search Results": "Search Results",
-            "Best Values Offers to Asia":"Best Values Offers to Asia"
-
-
+          "in": "in",
+          "hr": "hr",
+          "stop": "stop",
+          "BookFlight": "BookFlight",
+          "Search Results": "Search Results",
+          "Best Values Offers to Asia": "Best Values Offers to Asia",
+          "OK": "OK",
+          "Discounted Price: ": "Discounted Price: ",
+          "Original Price:": "Original Price:",
+          "You have a 10% discount on the price!":
+              "You have a 10% discount on the price!",
+          "Promo Code Applied": "Promo Code Applied",
         }
       };
 }

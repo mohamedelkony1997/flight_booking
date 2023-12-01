@@ -1,4 +1,4 @@
-// flight_model.dart
+
 class Flight {
   final String price;
   final String arrivalTime;
